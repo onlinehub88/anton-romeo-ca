@@ -42,21 +42,21 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://york-tanaka.vercel.app/"), // Replace with your actual domain
+  metadataBase: new URL("https://anton-romeo.vercel.app/"), // Replace with your actual domain
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://anton-romeo-portfolio.vercel.app/",
+    url: "https://anton-romeo.vercel.app/",
     title: "Anton Romeo | AI Full Stack Engineer",
     description:
       "Anton Romeo - AI Full Stack Engineer with 10 years of experience in LLM-driven features, RAG pipelines, and intelligent backend services. Based in Edmundston, NB, Canada.",
     siteName: "Anton Romeo Portfolio",
     images: [
       {
-        url: "/anton.png",
+        url: "/anton.jpg",
         width: 1200,
         height: 630,
         alt: "Anton Romeo - AI Full Stack Engineer",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: "Anton Romeo | AI Full Stack Engineer",
     description:
       "AI Full Stack Engineer with 10 years of experience specializing in LLM-driven features, RAG pipelines, and intelligent backend services.",
-    images: ["/anton.png"],
+    images: ["/anton.jpg"],
     creator: "@antonromeo",
   },
   robots: {
@@ -98,8 +98,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/anton.png" sizes="any" />
-        <link rel="apple-touch-icon" href="/anton.png" />
+        <link rel="icon" href="/anton.jpg" sizes="any" />
+        <link rel="apple-touch-icon" href="/anton.jpg" />
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 

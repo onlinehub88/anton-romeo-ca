@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -11,137 +11,172 @@ import { Separator } from "@/components/ui/separator";
 export default function ProjectsPage() {
   const projects = [
     {
-      id: 2,
-      title: "BinahAI",
-      category: "Healthcare, Full Stack, AI",
-      description:
-        "Developed full-stack mobile and backend solutions for Binah.ai's AI-powered, contactless health monitoring platform. Built React Native mobile apps, implemented serverless backend with GCP Functions and Node.js, and integrated ML-based health insights for real-time video analysis.",
-      image: "/portfolios/healthcare_binahai.png?height=300&width=600",
-      technologies: ["React Native", "Node.js", "GCP Functions", "FastAPI", "Firebase", "OpenAI", "Docker"],
-      link: "https://binah.ai/",
-      github: "#",
-    },
-    {
-      id: 4,
-      title: "ContractPower",
-      category: "AI Agent, Full Stack",
-      description:
-        "Built full-stack AI document intelligence platform for ContractPower. Developed React frontend with Flask backend, integrated Document AI and LLM-powered contract analysis, and implemented secure data processing with MySQL for the renewable energy sector.",
-      image: "/portfolios/AI_contactpower.png?height=300&width=600",
-      technologies: ["React", "Flask", "Document AI", "LangChain", "MySQL", "GCP", "OpenAI"],
-      link: "https://contractpower.ai",
-      github: "#",
-    },
-    {
-      id: 5,
-      title: "Revivoto",
-      category: "Real Estate, Full Stack",
-      description:
-        "Developed full-stack real estate photo editing platform for Revivoto. Built Angular frontend with .NET Core backend, implemented image processing workflows, integrated Entity Framework ORM with MS SQL, and deployed on Azure for virtual staging services.",
-      image: "/portfolios/realestate_revivoto.png?height=300&width=600",
-      technologies: ["Angular", ".NET Core", "MS SQL", "Entity Framework", "Azure", "TypeScript"],
-      link: "https://revivoto.com/",
-      github: "#",
-    },
-    {
-      id: 6,
-      title: "Rendair",
-      category: "Real Estate, Full Stack, AI",
-      description:
-        "Built full-stack 3D rendering platform for Rendair. Developed React frontend with Material-UI, implemented Node.js backend with RESTful APIs, integrated AWS services (S3 for storage, EC2 for rendering), and enabled secure collaboration for architectural visualization.",
-      image: "/portfolios/realestate_rendairai.png?height=300&width=600",
-      technologies: ["React", "Node.js", "Material-UI", "AWS", "S3", "EC2", "REST API"],
-      link: "https://www.rendaircorp.com",
-      github: "#",
-    },
-    {
-      id: 9,
-      title: "SPENDiD",
-      category: "Finance, AI, DevOps",
-      description:
-        "SPENDiD API has automated cloud deployments and implemented CI/CD for the company's predictive financial insights platform. It has also integrated AI-driven analytics and enabled scalable, secure fintech solutions for web and API clients.",
-      image: "/portfolios/finance_spendid.png?height=300&width=600",
-      technologies: ["AWS Lambda", "CI/CD", "Vue.js", "OpenAI", "CloudFront", "API Gateway", "S3"],
-      link: "https://spendid.io",
-      github: "#",
-    },
-    {
       id: 1,
-      title: "TryringAI",
-      category: "AI Agent, Web3, Full Stack",
+      title: "IconStreamer",
+      category: "AI Design Tools",
       description:
-        "Developed full-stack autonomous voice-based phone agent platform for Ring AI. Built Next.js frontend with TypeScript, implemented Node.js backend integrating OpenAI LLMs, speech-to-text/text-to-speech APIs, and Web3 functionality for 24/7 multilingual support in crypto/NFT sectors.",
-      image: "/portfolios/web3_AI_ringAI.png?height=300&width=600",
-      technologies: ["Next.js", "TypeScript", "Node.js", "OpenAI", "LLM", "STT/TTS", "Web3", "AWS"],
-      link: "https://www.tryring.ai/",
-      github: "#",
+        "Modern icon streaming and management platform for designers and developers. Provides seamless access to high-quality icons with real-time updates and integration capabilities.",
+      image: "/images/iconstreamer.png?height=300&width=600",
+      technologies: ["Next.js", "LiveKit", "Python", "Langchain", "LangGraph", "Supabase", "AWS", "CI/CD"],
+      link: "https://www.iconstreamer.com/",
+    },
+    {
+      id: 2,
+      title: "Thinkrr.ai",
+      category: "AI Voice & Sales Automation",
+      description:
+        "AI-driven voice agent platform automating inbound and outbound calls, CRM integration, and real-time appointment scheduling in multiple languages.",
+      image: "/images/thinkrrai.png?height=300&width=600",
+      technologies: ["React", "Node.js", "OpenAI", "Voice AI", "CRM Integration", "Multi-language", "REST API"],
+      link: "https://thinkrr.ai/",
     },
     {
       id: 3,
-      title: "Dr. Oracle",
-      category: "Medical, AI, Full Stack",
+      title: "SafePayment.ai",
+      category: "AI Voice & FinTech",
       description:
-        "Developed full-stack AI research assistant for medical data analysis. Built Next.js frontend with TypeScript, implemented LangChain-powered backend for intelligent document processing, integrated OpenAI APIs for medical insights, and ensured HIPAA compliance with Supabase.",
-      image: "/portfolios/healthcare_droracleai.png?height=300&width=600",
-      technologies: ["Next.js", "TypeScript", "LangChain", "OpenAI", "Supabase", "AWS", "HIPAA"],
-      link: "https://droracle.ai",
-      github: "#",
+        "Secure voice payment platform enabling PCI-compliant, AI-powered transactions and seamless integration with enterprise voice systems for enhanced security and compliance.",
+      image: "/images/safepayment.png?height=300&width=600",
+      technologies: ["React", "Framer Motion", "Voice AI", "STT/TTS", "Stripe", "Python", "PCI DSS", "Encryption"],
+      link: "https://safepayment.ai/",
     },
     {
-      id: 8,
-      title: "Streamlined Finance",
-      category: "Finance, Full Stack, AI",
+      id: 4,
+      title: "RingAI",
+      category: "AI Voice & Web3",
       description:
-        "Built full-stack AI-powered order-to-cash platform. Developed Next.js frontend with Tailwind CSS, implemented Django backend with REST APIs, integrated Stripe for payments, and used MongoDB/DynamoDB for data persistence. Enabled seamless B2B invoicing and accounting automation.",
-      image: "/portfolios/finance_streamlined.png?height=300&width=600",
-      technologies: ["Next.js", "Tailwind CSS", "Django", "Stripe API", "MongoDB", "DynamoDB", "REST API"],
-      link: "https://www.streamlined.finance",
-      github: "#",
+        "AI phone agent solution for 24/7 multilingual customer support, sales automation, analytics, and Web3/crypto payment integration with advanced features.",
+      image: "/images/tryringai.png?height=300&width=600",
+      technologies: ["React", "Node.js", "Prisma", "AI Voice", "VAPI AI", "CRM", "Multi-language", "web3.js", "Crypto"],
+      link: "https://www.tryring.ai/",
+    },
+    {
+      id: 5,
+      title: "SPENDiD",
+      category: "FinTech & AI & AWS",
+      description:
+        "Predictive analytics platform delivering financial insights, budgeting tools, and personalized wellness solutions via web applications and APIs for comprehensive financial management.",
+      image: "/images/finance_spendid.png?height=300&width=600",
+      technologies: ["Vue.js", "AWS Lambda", "OpenAI", "CloudFront", "CI/CD", "Financial APIs", "Predictive Analytics"],
+      link: "https://spendid.io",
+    },
+    {
+      id: 6,
+      title: "Stackguardian",
+      category: "Cloud Infrastructure",
+      description:
+        "Comprehensive platform for orchestrating infrastructure as code templates and organizational policies, featuring a robust marketplace and no-code policy builder.",
+      image: "/images/stackguardian.png?height=300&width=600",
+      technologies: ["Terraform", "Ansible", "AWS", "Azure", "GCP", "Docker", "Kubernetes", "Grafana", "Prometheus"],
+      link: "https://www.stackguardian.io/",
     },
     {
       id: 7,
-      title: "CryptoDo",
-      category: "Web3, Blockchain, Full Stack",
+      title: "ControlMonkey",
+      category: "Cloud Operations",
       description:
-        "Developed full-stack no-code multichain web3 builder platform. Built Next.js frontend, implemented Node.js microservices backend, integrated Web3.js for blockchain interactions, and enabled secure smart contract deployment using Solidity for decentralized app creation.",
-      image: "/portfolios/web3_cryptodo.png?height=300&width=600",
-      technologies: ["Next.js", "Node.js", "Web3.js", "Solidity", "Microservices", "TypeScript", "AWS"],
-      link: "https://cryptodo.app",
-      github: "#",
+        "Cloud operations solution enabling automated governance, compliance, and proactive management of cloud infrastructure through advanced IaC workflows.",
+      image: "/images/control_monkey.png?height=300&width=600",
+      technologies: ["Pulumi", "Jenkins", "Ansible", "Cilium", "Docker", "Kubernetes", "React", "AWS Lambda", "Node.js"],
+      link: "https://controlmonkey.io/",
+    },
+    {
+      id: 8,
+      title: "Ankra",
+      category: "Cloud Infrastructure",
+      description:
+        "Automation platform for cloud infrastructure, delivering seamless provisioning, integration, and enhanced developer efficiency across environments.",
+      image: "/images/ankra.png?height=300&width=600",
+      technologies: ["Jenkins", "Puppet", "Terraform", "Docker", "GIT", "Kubernetes", "Containerization", "Microservices"],
+      link: "https://www.ankra.io/",
+    },
+    {
+      id: 9,
+      title: "AliExpress",
+      category: "E-commerce & Cloud",
+      description:
+        "Global e-commerce platform utilizing scalable backend infrastructure, advanced cloud services, and interactive frontend technologies for high-performance online shopping.",
+      image: "/images/aliexpress.png?height=300&width=600",
+      technologies: ["Java", "Tengine", "React", "Vue.js", "Alibaba Cloud", "ECS", "Object Storage", "CDN", "Microservices"],
+      link: "https://www.aliexpress.com/",
+    },
+    {
+      id: 10,
+      title: "BinahAI",
+      category: "Healthcare & AI",
+      description:
+        "Led DevOps automation and cloud infrastructure for AI-powered, contactless health monitoring platform with advanced video analysis and ML health insights.",
+      image: "/images/healthcare_binahai.png?height=300&width=600",
+      technologies: ["GCP Function", "Serverless", "CI/CD", "React Native", "OpenAI", "Firebase", "Supabase", "HIPAA"],
+      link: "https://binah.ai/",
+    },
+    {
+      id: 11,
+      title: "ContractPower",
+      category: "AI & DevOps",
+      description:
+        "Architected and automated cloud infrastructure for AI-powered document intelligence platform, enabling secure and scalable contract review for renewable energy sector.",
+      image: "/images/AI_contactpower.png?height=300&width=600",
+      technologies: ["GCP", "Terraform", "CI/CD", "React", "Flask", "Document AI", "Docker", "LoadBalance", "K8s"],
+      link: "https://contractpower.ai",
+    },
+    {
+      id: 12,
+      title: "AI HomeDesign",
+      category: "AI Real Estate & DevOps",
+      description:
+        "Implemented CI/CD pipelines and Azure cloud automation for real estate photo editing platform, enabling rapid and reliable deployments for virtual staging services.",
+      image: "/images/aihomedesign.png?height=300&width=600",
+      technologies: ["Nuxt.js", "Vue.js", ".NET", "MS SQL", "CI/CD", "Entity Framework", "RESTful API", "Azure DevOps"],
+      link: "https://aihomedesign.com/",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <div className="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50 text-gray-900">
+      {/* Canadian Flag Decoration */}
+      <div className="fixed top-0 left-0 w-full h-2 bg-gradient-to-r from-red-600 via-white to-red-600 z-50"></div>
+      
+      <div className="container mx-auto px-4 py-16 sm:px-6 lg:px-8 relative">
+        {/* Background Maple Leaves */}
+        <div className="absolute top-20 right-20 text-9xl opacity-5 pointer-events-none">🍁</div>
+        <div className="absolute bottom-20 left-20 text-9xl opacity-5 pointer-events-none">🍁</div>
+        
         <div className="mb-12">
-          <Button variant="ghost" asChild className="mb-6">
-            <Link href="/" className="inline-flex items-center">
-              <ArrowLeft className="mr-2 h-4 w-4" />
+          <Button 
+            variant="ghost" 
+            asChild 
+            className="mb-6 text-red-600 hover:text-red-700 hover:bg-red-50 font-semibold"
+          >
+            <Link href="/" className="inline-flex items-center gap-2">
+              <ArrowLeft className="h-4 w-4" />
               Back to Home
+              <span>🍁</span>
             </Link>
           </Button>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            <span className="bg-gradient-to-r from-white to-zinc-500 bg-clip-text text-transparent">
-              My Projects
+            <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-600 bg-clip-text text-transparent flex items-center gap-3">
+              <span>🍁</span> My Projects <span>🍁</span>
             </span>
           </h1>
-          <p className="mt-4 max-w-3xl text-lg text-zinc-400">
+          <p className="mt-4 max-w-3xl text-lg text-gray-700 font-medium">
             A collection of projects I've worked on throughout my career,
             showcasing my skills and expertise in various technologies and
-            domains.
+            domains from across Canada 🇨🇦
           </p>
-          <Separator className="mt-8 bg-white/10" />
+          <Separator className="mt-8 bg-red-200 h-1" />
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <Card
               key={project.id}
-              className="group overflow-hidden border-white/10 bg-white/5 transition-all hover:border-white/20 hover:bg-white/10"
+              className="group overflow-hidden border-2 border-red-300 bg-white transition-all hover:border-red-600 hover:shadow-2xl hover:shadow-red-200 animate-fadeIn"
+              style={{ animationDelay: `${index * 50}ms` }}
             >
               <div className="relative aspect-video overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+                <div className="absolute top-2 right-2 z-10 text-3xl">🍁</div>
+                <div className="absolute inset-0 bg-gradient-to-t from-red-900/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
                 <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
@@ -153,50 +188,37 @@ export default function ProjectsPage() {
                   <Button
                     size="sm"
                     variant="outline"
-                    className="mr-2 h-8 w-8 rounded-full p-0"
+                    className="mr-2 h-8 w-8 rounded-full p-0 bg-red-600 border-2 border-white hover:bg-red-700 shadow-lg"
                     onClick={() => window.open(project.link, "_blank")}
                   >
-                    <ExternalLink className="h-4 w-4" />
+                    <ExternalLink className="h-4 w-4 text-white" />
                     <span className="sr-only">Visit site</span>
                   </Button>
-                  {/* <Button
-                    size="sm"
-                    variant="outline"
-                    className="h-8 w-8 rounded-full p-0"
-                  >
-                    <Github className="h-4 w-4" />
-                    <span className="sr-only">View code</span>
-                  </Button> */}
                 </div>
               </div>
-              <CardContent className="p-6">
-                <div className="mb-2 flex items-center justify-between">
-                  <h3 className="text-xl font-bold">{project.title}</h3>
+              <CardContent className="p-6 bg-gradient-to-br from-white to-red-50">
+                <div className="mb-2 flex items-center justify-between gap-2">
+                  <h3 className="text-xl font-bold text-red-700">{project.title}</h3>
                   <Badge
                     variant="outline"
-                    className="border-white/20 bg-white/5"
+                    className="border-2 border-red-400 bg-red-100 text-red-700 font-semibold text-xs"
                   >
                     {project.category}
                   </Badge>
                 </div>
-                <p className="mb-4 text-sm text-zinc-400">
+                <p className="mb-4 text-sm text-gray-700 leading-relaxed">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {[...new Set(project.technologies)].slice(0, 10).map((tech) => (
+                  {project.technologies.map((tech) => (
                     <Badge
                       key={tech}
                       variant="secondary"
-                      className="bg-white/10"
+                      className="bg-red-600 text-white hover:bg-red-700 font-medium text-xs"
                     >
                       {tech}
                     </Badge>
                   ))}
-                  {project.technologies.length > 10 && (
-                    <Badge variant="secondary" className="bg-white/10">
-                      +{project.technologies.length - 10} more
-                    </Badge>
-                  )}
                 </div>
               </CardContent>
             </Card>

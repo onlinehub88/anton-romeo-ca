@@ -133,12 +133,48 @@ export default function Home() {
     }
   };
 
+  const featuredProjects = [
+    {
+      id: 1,
+      title: "IconStreamer",
+      category: "AI Design Tools",
+      description:
+        "Modern icon streaming and management platform for designers and developers. Provides seamless access to high-quality icons with real-time updates and integration capabilities.",
+      image: "/images/iconstreamer.png?height=300&width=600",
+      technologies: ["Next.js", "LiveKit", "Python", "Langchain", "LangGraph", "Supabase", "AWS", "CI/CD"],
+      link: "https://www.iconstreamer.com/",
+    },
+    {
+      id: 2,
+      title: "Thinkrr.ai",
+      category: "AI Voice & Sales Automation",
+      description:
+        "AI-driven voice agent platform automating inbound and outbound calls, CRM integration, and real-time appointment scheduling in multiple languages.",
+      image: "/images/thinkrrai.png?height=300&width=600",
+      technologies: ["React", "Node.js", "OpenAI", "Voice AI", "CRM Integration", "Multi-language", "REST API"],
+      link: "https://thinkrr.ai/",
+    },
+    {
+      id: 3,
+      title: "SafePayment.ai",
+      category: "AI Voice & FinTech",
+      description:
+        "Secure voice payment platform enabling PCI-compliant, AI-powered transactions and seamless integration with enterprise voice systems for enhanced security and compliance.",
+      image: "/images/safepayment.png?height=300&width=600",
+      technologies: ["React", "Framer Motion", "Voice AI", "STT/TTS", "Stripe", "Python", "PCI DSS", "Encryption"],
+      link: "https://safepayment.ai/",
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50 text-gray-900">
+      {/* Canadian Flag Decoration */}
+      <div className="fixed top-0 left-0 w-full h-2 bg-gradient-to-r from-red-600 via-white to-red-600 z-50"></div>
+      
       {/* Scroll to Top Button */}
       <Button
         onClick={scrollToTop}
-        className={`fixed bottom-8 right-8 z-50 h-12 w-12 rounded-full bg-white/10 p-0 backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:scale-110 transition-all duration-300 ${
+        className={`fixed bottom-8 right-8 z-50 h-12 w-12 rounded-full bg-red-600 p-0 backdrop-blur-sm border-2 border-white hover:bg-red-700 hover:scale-110 transition-all duration-300 shadow-lg ${
           showScrollTop
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-4 pointer-events-none"
@@ -149,11 +185,18 @@ export default function Home() {
       </Button>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden bg-gradient-to-br from-red-600 via-red-500 to-red-700">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 to-black opacity-90"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1)_0%,rgba(0,0,0,0)_60%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(255,255,255,0.08)_0%,rgba(0,0,0,0)_60%)]"></div>
+          {/* Maple Leaf Pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 left-10 text-white text-9xl">🍁</div>
+            <div className="absolute top-40 right-20 text-white text-6xl">🍁</div>
+            <div className="absolute bottom-20 left-1/4 text-white text-7xl">🍁</div>
+            <div className="absolute bottom-40 right-1/3 text-white text-5xl">🍁</div>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-red-600/50 to-red-800/80"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15)_0%,rgba(220,38,38,0)_60%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(255,255,255,0.1)_0%,rgba(220,38,38,0)_60%)]"></div>
           <div className="absolute inset-0">
             {randomStyles.map((style, i) => (
               <div
@@ -169,17 +212,18 @@ export default function Home() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="space-y-8 animate-fadeIn">
               <div className="space-y-4">
-                <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm backdrop-blur-sm">
-                  <span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-white"></span>
-                  AI Full Stack Engineer
+                <div className="inline-flex items-center rounded-full border-2 border-white bg-white/95 px-4 py-2 text-sm backdrop-blur-sm shadow-lg">
+                  <span className="mr-2 text-xl">🍁</span>
+                  <span className="font-semibold text-red-600">AI Full Stack Engineer</span>
+                  <span className="ml-2 text-xl">🍁</span>
                 </div>
-                <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+                <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-white drop-shadow-lg">
                   Hi, I'm{" "}
-                  <span className="animate-gradient-text bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-white via-red-100 to-white bg-clip-text text-transparent">
                     Anton Romeo
                   </span>
                 </h1>
-                <p className="max-w-2xl text-xl text-zinc-400">
+                <p className="max-w-2xl text-xl text-white/95 drop-shadow-md">
                   AI Full-Stack Engineer with 10 years of experience building production-grade web and mobile applications powered by modern AI systems. Specialized in LLM-driven features, RAG pipelines, and intelligent backend services.
                 </p>
               </div>
@@ -187,7 +231,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-3">
                 <Button
                   asChild
-                  className="animate-slideInLeft bg-white text-black hover:bg-gray-200"
+                  className="animate-slideInLeft bg-white text-red-600 hover:bg-red-50 font-semibold shadow-lg border-2 border-white"
                 >
                   <Link href="#contact">
                     Get in touch <ArrowRight className="ml-2 h-4 w-4" />
@@ -196,14 +240,14 @@ export default function Home() {
                 <Button
                   variant="outline"
                   asChild
-                  className="animate-slideInLeft animation-delay-100 border-white text-white hover:bg-white/10"
+                  className="animate-slideInLeft animation-delay-100 border-2 border-white text-white hover:bg-white/20 font-semibold backdrop-blur-sm"
                 >
                   <Link href="#projects">View my work</Link>
                 </Button>
                 <Button
                   variant="ghost"
                   asChild
-                  className="animate-slideInLeft animation-delay-200 text-white hover:bg-white/10"
+                  className="animate-slideInLeft animation-delay-200 text-white hover:bg-white/20 font-semibold backdrop-blur-sm"
                 >
                   <Link href="/cv" className="group flex items-center gap-1">
                     <Download className="h-4 w-4 transition-transform group-hover:-translate-y-1" />
@@ -212,31 +256,33 @@ export default function Home() {
                 </Button>
               </div>
 
-              <div className="flex flex-wrap gap-6 text-sm text-zinc-400">
-                <div className="flex items-center gap-1">
-                  <MapPin className="h-4 w-4" />
-                  Edmundston, NB, Canada
+              <div className="flex flex-wrap gap-6 text-sm">
+                <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-2 rounded-full border border-white/30">
+                  <MapPin className="h-4 w-4 text-white" />
+                  <span className="text-white font-medium">🇨🇦 Edmundston, NB, Canada</span>
                 </div>
-                <div className="flex items-center gap-1">
-                  <Mail className="h-4 w-4" />
-                  antonr24710@gmail.com
+                <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-2 rounded-full border border-white/30">
+                  <Mail className="h-4 w-4 text-white" />
+                  <span className="text-white font-medium">antonr24710@gmail.com</span>
                 </div>
-                <div className="flex items-center gap-1">
-                  <Phone className="h-4 w-4" />
-                  +1 251 250 0203
+                <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-2 rounded-full border border-white/30">
+                  <Phone className="h-4 w-4 text-white" />
+                  <span className="text-white font-medium">+1 251 250 0203</span>
                 </div>
               </div>
             </div>
 
             <div className="relative mx-auto aspect-square w-full max-w-xs">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/20 to-white/10 opacity-30 blur-3xl"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/40 to-red-200/30 opacity-50 blur-3xl"></div>
+              <div className="absolute -top-4 -right-4 text-6xl z-10 animate-bounce">🍁</div>
               <div className="relative h-full w-full animate-float">
+                <div className="absolute inset-0 rounded-full border-8 border-white shadow-2xl"></div>
                 <Image
-                  src="/anton.png?height=300&width=300"
+                  src="/anton.jpg?height=300&width=300"
                   alt="Developer illustration"
                   width={300}
                   height={300}
-                  className="h-full w-full object-cover rounded-full"
+                  className="h-full w-full object-cover rounded-full border-4 border-red-600"
                   priority
                 />
               </div>
@@ -246,90 +292,103 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="border-t border-white/10 bg-black py-24">
+      <section id="about" className="border-t-4 border-red-600 bg-white py-24 relative">
+        <div className="absolute top-10 right-10 text-8xl opacity-5">🍁</div>
+        <div className="absolute bottom-10 left-10 text-8xl opacity-5">🍁</div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center animate-fadeIn">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              <span className="animate-gradient-text bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
-                About Me
+              <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-600 bg-clip-text text-transparent">
+                🍁 About Me 🍁
               </span>
             </h2>
-            <p className="mt-4 text-lg text-zinc-400">
+            <p className="mt-4 text-lg text-gray-700 font-medium">
               With 10 years of experience building production-grade web and mobile applications powered by modern AI systems. Specialized in LLM-driven features, RAG pipelines, intelligent backend services, and delivering secure, low-latency systems built for real-world adoption.
             </p>
           </div>
 
           <div className="mt-16">
             <Tabs defaultValue="profile" className="mx-auto max-w-4xl">
-              <TabsList className="grid w-full grid-cols-3">
+              <TabsList className="grid w-full grid-cols-3 bg-red-100 border-2 border-red-300 p-1">
                 <TabsTrigger
                   value="profile"
-                  className="data-[state=active]:bg-white data-[state=active]:text-black"
+                  className="data-[state=active]:bg-red-600 data-[state=active]:text-white font-semibold"
                 >
                   Profile
                 </TabsTrigger>
                 <TabsTrigger
                   value="skills"
-                  className="data-[state=active]:bg-white data-[state=active]:text-black"
+                  className="data-[state=active]:bg-red-600 data-[state=active]:text-white font-semibold"
                 >
                   Skills
                 </TabsTrigger>
                 <TabsTrigger
                   value="interests"
-                  className="data-[state=active]:bg-white data-[state=active]:text-black"
+                  className="data-[state=active]:bg-red-600 data-[state=active]:text-white font-semibold"
                 >
                   Interests
                 </TabsTrigger>
               </TabsList>
               <TabsContent
                 value="profile"
-                className="mt-6 space-y-6 rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm animate-fadeIn"
+                className="mt-6 space-y-6 rounded-xl border-2 border-red-200 bg-red-50/50 p-6 backdrop-blur-sm animate-fadeIn shadow-lg"
               >
-                <p className="text-zinc-300">
+                <p className="text-gray-800 leading-relaxed">
                   AI Full-Stack Engineer with 10 years of experience building production-grade web and mobile applications powered by modern AI systems. Specialized in LLM-driven features, RAG pipelines, and intelligent backend services, with a strong balance of web and mobile app development.
                 </p>
-                <p className="text-zinc-300">
+                <p className="text-gray-800 leading-relaxed">
                   Experienced in designing and deploying scalable AI microservices, integrating LLMs into real user workflows such as chat assistants, document automation, and semantic search. Skilled in FastAPI, Node.js, cloud-native deployment on AWS, and delivering secure, low-latency systems that are built for real-world adoption. Known for writing clean, maintainable code and translating complex AI capabilities into reliable, user-focused products.
                 </p>
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-                  <p className="italic text-zinc-400">
-                    "The Only Way Out is to LEARN!"
+                <div className="rounded-lg border-2 border-red-200 bg-white p-4 shadow-md">
+                  <p className="italic text-red-700 font-medium flex items-center gap-2">
+                    <span>🍁</span>
+                    "Code is read much more often than it is written."
+                    <span>🍁</span>
                   </p>
                 </div>
-                <div className="rounded-lg border border-white/10 bg-white/5 p-4">
-                  <p className="italic text-zinc-400">
-                    "Strive to build things that make a difference!"
+                <div className="rounded-lg border-2 border-red-200 bg-white p-4 shadow-md">
+                  <p className="italic text-red-700 font-medium flex items-center gap-2">
+                    <span>🍁</span>
+                    "Make it work, make it right, make it fast."
+                    <span>🍁</span>
                   </p>
                 </div>
               </TabsContent>
               <TabsContent
                 value="skills"
-                className="mt-6 space-y-6 rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm animate-fadeIn"
+                className="mt-6 space-y-6 rounded-xl border-2 border-red-200 bg-red-50/50 p-6 backdrop-blur-sm animate-fadeIn shadow-lg"
               >
                 <div className="space-y-4">
-                  <h3 className="text-xl font-medium">Core Technologies</h3>
+                  <h3 className="text-xl font-bold text-red-600 flex items-center gap-2">
+                    <span>🍁</span> Core Technologies
+                  </h3>
                   <div className="flex flex-wrap gap-2">
                     {[
                       "Python",
                       "JavaScript",
                       "TypeScript",
-                      "Java",
-                      "Go",
                       "React",
                       "Next.js",
+                      "Angular",
+                      "Prisma",
+                      "GraphQL",
+                      "Supabase",
                       "FastAPI",
                       "Node.js",
                       "Flask",
                       "Django",
-                      "AWS",
                       "Docker",
                       "PostgreSQL",
                       "MongoDB",
+                      "AWS",
+                      "CI/CD",
+                      "Kubernetes",
+                      "GCP"
                     ].map((skill, index) => (
                       <Badge
                         key={skill}
                         variant="outline"
-                        className="border-white/20 bg-white/5 animate-fadeIn"
+                        className="border-2 border-red-400 bg-white text-red-600 hover:bg-red-600 hover:text-white transition-colors animate-fadeIn font-semibold"
                         style={{ animationDelay: `${index * 50}ms` }}
                       >
                         {skill}
@@ -338,24 +397,31 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-xl font-medium">AI & Tools</h3>
+                  <h3 className="text-xl font-bold text-red-600 flex items-center gap-2">
+                    <span>🍁</span> AI & Tools
+                  </h3>
                   <div className="flex flex-wrap gap-2">
                     {[
+                      "Artificial Intelligence",
                       "LangChain",
                       "LangGraph",
                       "RAG",
                       "Vector DBs",
                       "OpenAI API",
-                      "GPT-4",
+                      "GPT-4/5",
                       "Claude",
-                      "Redux",
-                      "Zustand",
-                      "Kubernetes",
+                      "Gemini",
+                      "Elevenlabs",
+                      "Whisper",
+                      "Pinecone",
+                      "Machine Learning",
+                      "Tensorflow",
+                      "Pytorch"
                     ].map((tool, index) => (
                       <Badge
                         key={tool}
                         variant="outline"
-                        className="border-white/20 bg-white/5 animate-fadeIn"
+                        className="border-2 border-red-400 bg-white text-red-600 hover:bg-red-600 hover:text-white transition-colors animate-fadeIn font-semibold"
                         style={{ animationDelay: `${index * 50 + 500}ms` }}
                       >
                         {tool}
@@ -366,28 +432,34 @@ export default function Home() {
               </TabsContent>
               <TabsContent
                 value="interests"
-                className="mt-6 space-y-6 rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm animate-fadeIn"
+                className="mt-6 space-y-6 rounded-xl border-2 border-red-200 bg-red-50/50 p-6 backdrop-blur-sm animate-fadeIn shadow-lg"
               >
                 <div className="grid gap-4 sm:grid-cols-3">
-                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 transition-all hover:bg-white/10 hover:scale-105 animate-fadeIn animation-delay-100">
-                    <h3 className="mb-2 font-medium">AI Innovation</h3>
-                    <p className="text-sm text-zinc-400">
-                      Exploring cutting-edge AI technologies and implementing
-                      LLM-driven solutions for real-world problems.
+                  <div className="rounded-lg border-2 border-red-300 bg-white p-4 transition-all hover:bg-red-50 hover:scale-105 hover:border-red-500 animate-fadeIn animation-delay-100 shadow-md">
+                    <h3 className="mb-2 font-bold text-red-600 flex items-center gap-2">
+                      <span>⚽</span> Football
+                    </h3>
+                    <p className="text-sm text-gray-700">
+                      Passionate about football as a team sport, following major leagues 
+                      and tournaments, and enjoying the teamwork and strategic aspects of the game.
                     </p>
                   </div>
-                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 transition-all hover:bg-white/10 hover:scale-105 animate-fadeIn animation-delay-200">
-                    <h3 className="mb-2 font-medium">Full Stack Development</h3>
-                    <p className="text-sm text-zinc-400">
-                      Building end-to-end applications with modern frameworks
-                      and best practices for web and mobile platforms.
+                  <div className="rounded-lg border-2 border-red-300 bg-white p-4 transition-all hover:bg-red-50 hover:scale-105 hover:border-red-500 animate-fadeIn animation-delay-200 shadow-md">
+                    <h3 className="mb-2 font-bold text-red-600 flex items-center gap-2">
+                      <span>🏒</span> Hockey
+                    </h3>
+                    <p className="text-sm text-gray-700">
+                      Enthusiastic about hockey as a team sport, appreciating the speed, 
+                      skill, and collaboration of the game while following NHL and international competitions.
                     </p>
                   </div>
-                  <div className="rounded-lg border border-white/10 bg-white/5 p-4 transition-all hover:bg-white/10 hover:scale-105 animate-fadeIn animation-delay-300">
-                    <h3 className="mb-2 font-medium">Continuous Learning</h3>
-                    <p className="text-sm text-zinc-400">
-                      Staying current with emerging technologies and sharing
-                      knowledge with the developer community.
+                  <div className="rounded-lg border-2 border-red-300 bg-white p-4 transition-all hover:bg-red-50 hover:scale-105 hover:border-red-500 animate-fadeIn animation-delay-300 shadow-md">
+                    <h3 className="mb-2 font-bold text-red-600 flex items-center gap-2">
+                      <span>💡</span> Trending Technology Learning
+                    </h3>
+                    <p className="text-sm text-gray-700">
+                      Constantly exploring emerging technologies, experimenting with
+                      new frameworks, and staying ahead of industry trends.
                     </p>
                   </div>
                 </div>
@@ -400,187 +472,89 @@ export default function Home() {
       {/* Projects Section */}
       <section
         id="projects"
-        className="border-t border-white/10 bg-zinc-950 py-24"
+        className="border-t-4 border-red-600 bg-gradient-to-br from-red-50 to-white py-24 relative"
       >
+        <div className="absolute top-20 right-20 text-9xl opacity-5">🍁</div>
+        <div className="absolute bottom-20 left-20 text-9xl opacity-5">🍁</div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center animate-fadeIn">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              <span className="animate-gradient-text bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
-                Recent Projects
+              <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-600 bg-clip-text text-transparent">
+                🍁 Recent Projects 🍁
               </span>
             </h2>
-            <p className="mt-4 text-lg text-zinc-400">
+            <p className="mt-4 text-lg text-gray-700 font-medium">
               Here are a few projects I've worked on recently.
             </p>
           </div>
 
           <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Project 1: BinahAI */}
-            <Card className="group overflow-hidden border-white/10 bg-white/5 transition-all hover:border-white/20 hover:bg-white/10 animate-fadeIn animation-delay-100">
-              <div className="relative aspect-video overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
-                <Image
-                  src="/portfolios/healthcare_binahai.png?height=300&width=600"
-                  alt="BinahAI"
-                  width={600}
-                  height={300}
-                  className="h-full w-full object-cover transition-transform group-hover:scale-105"
-                />
-                <div className="absolute bottom-0 left-0 right-0 flex justify-end p-4 opacity-0 transition-opacity group-hover:opacity-100">
-                  <a href="https://binah.ai/" target="_blank" rel="noopener noreferrer">
-                    <Button
-                      size="sm"
+            {featuredProjects.map((project, index) => (
+              <Card 
+                key={project.id}
+                className="group overflow-hidden border-2 border-red-300 bg-white transition-all hover:border-red-600 hover:shadow-2xl hover:shadow-red-200 animate-fadeIn"
+                style={{ animationDelay: `${(index + 1) * 100}ms` }}
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <div className="absolute top-2 right-2 z-10 text-3xl">🍁</div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-red-900/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={600}
+                    height={300}
+                    className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 flex justify-end p-4 opacity-0 transition-opacity group-hover:opacity-100">
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="mr-2 h-8 w-8 rounded-full p-0 bg-red-600 border-2 border-white hover:bg-red-700 shadow-lg"
+                      >
+                        <ExternalLink className="h-4 w-4 text-white" />
+                        <span className="sr-only">Visit site</span>
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+                <CardContent className="p-6 bg-gradient-to-br from-white to-red-50">
+                  <div className="mb-2 flex items-center justify-between">
+                    <h3 className="text-xl font-bold text-red-700">{project.title}</h3>
+                    <Badge
                       variant="outline"
-                      className="mr-2 h-8 w-8 rounded-full p-0 bg-white/10 border-white/20 hover:bg-white/20"
+                      className="border-2 border-red-400 bg-red-100 text-red-700 font-semibold"
                     >
-                      <ExternalLink className="h-4 w-4" />
-                      <span className="sr-only">Visit site</span>
-                    </Button>
-                  </a>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <div className="mb-2 flex items-center justify-between">
-                  <h3 className="text-xl font-bold">BinahAI</h3>
-                  <Badge
-                    variant="outline"
-                    className="border-white/20 bg-white/5"
-                  >
-                    Healthcare, AI
-                  </Badge>
-                </div>
-                <p className="mb-4 text-sm text-zinc-400">
-                Built full-stack AI-powered contactless health monitoring platform using React Native for mobile interfaces and GCP Functions for serverless backend. Integrated OpenAI APIs for intelligent health insights and implemented real-time video analysis with scalable cloud architecture.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["React Native", "GCP", "Node.js", "FastAPI", "OpenAI API", "Firebase", "TypeScript", "Docker"].map(
-                    (tech) => (
+                      {project.category}
+                    </Badge>
+                  </div>
+                  <p className="mb-4 text-sm text-gray-700">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
                       <Badge
                         key={tech}
                         variant="secondary"
-                        className="bg-white/10"
+                        className="bg-red-600 text-white hover:bg-red-700 font-medium"
                       >
                         {tech}
                       </Badge>
-                    )
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Project 3: Dr. Oracle */}
-            <Card className="group overflow-hidden border-white/10 bg-white/5 transition-all hover:border-white/20 hover:bg-white/10 animate-fadeIn animation-delay-300">
-              <div className="relative aspect-video overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
-                <Image
-                  src="/portfolios/healthcare_droracleai.png?height=300&width=600"
-                  alt="Dr. Oracle"
-                  width={600}
-                  height={300}
-                  className="h-full w-full object-cover transition-transform group-hover:scale-105"
-                />
-                <div className="absolute bottom-0 left-0 right-0 flex justify-end p-4 opacity-0 transition-opacity group-hover:opacity-100">
-                  <a href="https://droracle.ai" target="_blank" rel="noopener noreferrer">
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="mr-2 h-8 w-8 rounded-full p-0 bg-white/10 border-white/20 hover:bg-white/20"
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                      <span className="sr-only">Visit site</span>
-                    </Button>
-                  </a>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <div className="mb-2 flex items-center justify-between">
-                  <h3 className="text-xl font-bold">Dr. Oracle</h3>
-                  <Badge
-                    variant="outline"
-                    className="border-white/20 bg-white/5"
-                  >
-                    Medical, AI
-                  </Badge>
-                </div>
-                <p className="mb-4 text-sm text-zinc-400">
-                Developed full-stack AI research assistant for medical data analysis. Built responsive frontend with Next.js and TypeScript, implemented LLM-powered backend with LangChain for document Q&A, and integrated Supabase for HIPAA-compliant data management.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["Next.js", "React", "TypeScript", "LangChain", "OpenAI API", "Supabase", "Python", "AWS"].map((tech) => (
-                    <Badge
-                      key={tech}
-                      variant="secondary"
-                      className="bg-white/10"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Project 2: SPENDiD */}
-            <Card className="group overflow-hidden border-white/10 bg-white/5 transition-all hover:border-white/20 hover:bg-white/10 animate-fadeIn animation-delay-200">
-              <div className="relative aspect-video overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
-                <Image
-                  src="/portfolios/finance_spendid.png?height=300&width=600"
-                  alt="Rendair"
-                  width={600}
-                  height={300}
-                  className="h-full w-full object-cover transition-transform group-hover:scale-105"
-                />
-                <div className="absolute bottom-0 left-0 right-0 flex justify-end p-4 opacity-0 transition-opacity group-hover:opacity-100">
-                  <a href="https://spendid.io" target="_blank" rel="noopener noreferrer">
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="mr-2 h-8 w-8 rounded-full p-0 bg-white/10 border-white/20 hover:bg-white/20"
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                      <span className="sr-only">Visit site</span>
-                    </Button>
-                  </a>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <div className="mb-2 flex items-center justify-between">
-                  <h3 className="text-xl font-bold">SPENDiD</h3>
-                  <Badge
-                    variant="outline"
-                    className="border-white/20 bg-white/5"
-                  >
-                    Finance, AI, DevOps
-                  </Badge>
-                </div>
-                <p className="mb-4 text-sm text-zinc-400">
-                Built full-stack predictive financial insights platform with Vue.js frontend and serverless backend. Integrated OpenAI for AI-driven analytics, implemented secure API Gateway for fintech compliance, and deployed scalable microservices on AWS Lambda.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["Vue.js", "AWS Lambda", "Node.js", "OpenAI API", "API Gateway", "DynamoDB", "TypeScript"].map((tech) => (
-                    <Badge
-                      key={tech}
-                      variant="secondary"
-                      className="bg-white/10"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
           <div className="mt-12 text-center">
             <Button
               variant="outline"
               asChild
-              className="border-white text-white hover:bg-white hover:text-black animate-pulse"
+              className="border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-bold text-lg px-8 py-6 shadow-lg animate-pulse"
             >
               <Link href="/projects">
-                View all projects <ArrowRight className="ml-2 h-4 w-4" />
+                View all projects <ArrowRight className="ml-2 h-5 w-5" /> <span className="ml-2">🍁</span>
               </Link>
             </Button>
           </div>
@@ -588,15 +562,17 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section className="border-t border-white/10 bg-black py-24">
+      <section className="border-t-4 border-red-600 bg-white py-24 relative">
+        <div className="absolute top-10 left-10 text-8xl opacity-5">🍁</div>
+        <div className="absolute bottom-10 right-10 text-8xl opacity-5">🍁</div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center animate-fadeIn">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              <span className="animate-gradient-text bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
-                Professional Skillset
+              <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-600 bg-clip-text text-transparent">
+                🍁 Professional Skillset 🍁
               </span>
             </h2>
-            <p className="mt-4 text-lg text-zinc-400">
+            <p className="mt-4 text-lg text-gray-700 font-medium">
               Technologies and tools I use daily to build production-grade AI-powered applications and intelligent backend services.
             </p>
           </div>
@@ -640,16 +616,17 @@ export default function Home() {
               ].map((skill, index) => (
                 <div
                   key={index}
-                  className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/5 p-6 transition-all hover:border-white/20 hover:bg-white/10 hover:scale-105 animate-fadeIn"
+                  className="group relative overflow-hidden rounded-lg border-2 border-red-300 bg-gradient-to-br from-white to-red-50 p-6 transition-all hover:border-red-600 hover:shadow-xl hover:shadow-red-200 hover:scale-105 animate-fadeIn"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-white/5 transition-transform group-hover:scale-150"></div>
+                  <div className="absolute -right-10 -top-10 text-6xl opacity-10">🍁</div>
+                  <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-red-200/30 transition-transform group-hover:scale-150"></div>
                   <div className="relative z-10">
-                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-white/10 bg-white/5">
+                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg border-2 border-red-400 bg-red-600 text-white shadow-md">
                       <Code className="h-6 w-6" />
                     </div>
-                    <h3 className="mb-2 text-xl font-medium">{skill.name}</h3>
-                    <p className="text-sm text-zinc-400">{skill.description}</p>
+                    <h3 className="mb-2 text-xl font-bold text-red-700">{skill.name}</h3>
+                    <p className="text-sm text-gray-700">{skill.description}</p>
                   </div>
                 </div>
               ))}
@@ -661,81 +638,99 @@ export default function Home() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="border-t border-white/10 bg-zinc-950 py-24"
+        className="border-t-4 border-red-600 bg-gradient-to-br from-red-600 via-red-500 to-red-700 py-24 relative"
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 text-9xl text-white">🍁</div>
+          <div className="absolute bottom-20 right-20 text-9xl text-white">🍁</div>
+          <div className="absolute top-1/2 left-1/3 text-7xl text-white">🍁</div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="mx-auto max-w-3xl text-center animate-fadeIn">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              <span className="animate-gradient-text bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
-                Get In Touch
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-white drop-shadow-lg">
+              <span className="flex items-center justify-center gap-3">
+                <span>🍁</span> Get In Touch <span>🍁</span>
               </span>
             </h2>
-            <p className="mt-4 text-lg text-zinc-400">
+            <p className="mt-4 text-lg text-white/95 drop-shadow-md font-medium">
               Have a project in mind? Let's work together.
             </p>
           </div>
 
           <div className="mt-16 grid gap-8 lg:grid-cols-2">
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm animate-slideInLeft">
-              <h3 className="mb-4 text-xl font-medium">Contact Information</h3>
+            <div className="rounded-xl border-2 border-white bg-white/95 p-6 backdrop-blur-sm animate-slideInLeft shadow-2xl">
+              <h3 className="mb-4 text-xl font-bold text-red-600 flex items-center gap-2">
+                <span>🍁</span> Contact Information
+              </h3>
               <div className="space-y-4">
                 
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5">
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-red-50 border-2 border-red-200 hover:border-red-400 transition-colors">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg border-2 border-red-400 bg-red-600 text-white">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-zinc-400">Email</p>
-                    <p className="font-medium">antonr24710@gmail.com</p>
+                    <p className="text-sm text-red-600 font-semibold">Email</p>
+                    <p className="font-medium text-gray-800">antonr24710@gmail.com</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5">
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-red-50 border-2 border-red-200 hover:border-red-400 transition-colors">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg border-2 border-red-400 bg-red-600 text-white">
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-zinc-400">Phone</p>
-                    <p className="font-medium">+1 251 250 0203</p>
+                    <p className="text-sm text-red-600 font-semibold">Phone</p>
+                    <p className="font-medium text-gray-800">+1 (769) 358-9629</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5">
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-red-50 border-2 border-red-200 hover:border-red-400 transition-colors">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg border-2 border-red-400 bg-red-600 text-white">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-zinc-400">Location</p>
-                    <p className="font-medium">Edmundston, NB, Canada</p>
+                    <p className="text-sm text-red-600 font-semibold">Location</p>
+                    <p className="font-medium text-gray-800 flex items-center gap-1">
+                      <span>🇨🇦</span> Edmundston, NB, Canada
+                    </p>
                   </div>
                 </div>
-                {/* <a href="https://www.linkedin.com/in/anton-romeo" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:bg-white/10 rounded-lg transition-colors p-3 -m-3 group">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 group-hover:border-white/20">
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-red-50 border-2 border-red-200 hover:border-red-400 transition-colors">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg border-2 border-red-400 bg-red-600 text-white">
                     <Linkedin className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-zinc-400">LinkedIn</p>
-                    <p className="font-medium text-white group-hover:underline">Connect on LinkedIn</p>
+                    <p className="text-sm text-red-600 font-semibold">LinkedIn</p>
+                    <a 
+                      href="https://www.linkedin.com/in/anton-romeo-218a4b3a8" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="font-medium text-gray-800 hover:text-red-600 hover:underline transition-colors"
+                    >
+                      Connect on LinkedIn
+                    </a>
                   </div>
-                </a> */}
+                </div>
               </div>
             </div>
 
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm animate-slideInRight">
-              <h3 className="mb-4 text-xl font-medium">Send a Message</h3>
+            <div className="rounded-xl border-2 border-white bg-white/95 p-6 backdrop-blur-sm animate-slideInRight shadow-2xl">
+              <h3 className="mb-4 text-xl font-bold text-red-600 flex items-center gap-2">
+                <span>🍁</span> Send a Message
+              </h3>
 
               {sent ? (
-                <div className="text-green-400 font-medium mb-4">
-                  Message sent! Thank you for reaching out.
+                <div className="text-green-600 font-semibold mb-4 p-3 bg-green-50 rounded-lg border-2 border-green-300">
+                  ✅ Message sent! Thank you for reaching out.
                 </div>
               ) : null}
               {errors.form && (
-                <div className="text-red-400 font-medium mb-4">
+                <div className="text-red-600 font-semibold mb-4 p-3 bg-red-50 rounded-lg border-2 border-red-300">
                   {errors.form}
                 </div>
               )}
               <form className="space-y-4" onSubmit={handleSubmit} noValidate>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium">
+                    <label htmlFor="name" className="text-sm font-semibold text-red-700">
                       Name
                     </label>
                     <input
@@ -743,8 +738,8 @@ export default function Home() {
                       type="text"
                       value={form.name}
                       onChange={handleChange}
-                      className={`w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-white placeholder:text-zinc-500 focus:border-white/20 focus:outline-none focus:ring-1 focus:ring-white/20 ${
-                        errors.name ? "border-red-500" : ""
+                      className={`w-full rounded-lg border-2 border-red-300 bg-white px-3 py-2 text-gray-800 placeholder:text-gray-400 focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 ${
+                        errors.name ? "border-red-600" : ""
                       }`}
                       placeholder="Your name"
                     />
@@ -753,7 +748,7 @@ export default function Home() {
                     )}
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium">
+                    <label htmlFor="email" className="text-sm font-semibold text-red-700">
                       Email
                     </label>
                     <input
@@ -761,8 +756,8 @@ export default function Home() {
                       type="email"
                       value={form.email}
                       onChange={handleChange}
-                      className={`w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-white placeholder:text-zinc-500 focus:border-white/20 focus:outline-none focus:ring-1 focus:ring-white/20 ${
-                        errors.email ? "border-red-500" : ""
+                      className={`w-full rounded-lg border-2 border-red-300 bg-white px-3 py-2 text-gray-800 placeholder:text-gray-400 focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 ${
+                        errors.email ? "border-red-600" : ""
                       }`}
                       placeholder="Your email"
                     />
@@ -772,7 +767,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium">
+                  <label htmlFor="subject" className="text-sm font-semibold text-red-700">
                     Subject
                   </label>
                   <input
@@ -780,8 +775,8 @@ export default function Home() {
                     type="text"
                     value={form.subject}
                     onChange={handleChange}
-                    className={`w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-white placeholder:text-zinc-500 focus:border-white/20 focus:outline-none focus:ring-1 focus:ring-white/20 ${
-                      errors.subject ? "border-red-500" : ""
+                    className={`w-full rounded-lg border-2 border-red-300 bg-white px-3 py-2 text-gray-800 placeholder:text-gray-400 focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 ${
+                      errors.subject ? "border-red-600" : ""
                     }`}
                     placeholder="Subject"
                   />
@@ -790,7 +785,7 @@ export default function Home() {
                   )}
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">
+                  <label htmlFor="message" className="text-sm font-semibold text-red-700">
                     Message
                   </label>
                   <textarea
@@ -798,8 +793,8 @@ export default function Home() {
                     rows={4}
                     value={form.message}
                     onChange={handleChange}
-                    className={`w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-white placeholder:text-zinc-500 focus:border-white/20 focus:outline-none focus:ring-1 focus:ring-white/20 ${
-                      errors.message ? "border-red-500" : ""
+                    className={`w-full rounded-lg border-2 border-red-300 bg-white px-3 py-2 text-gray-800 placeholder:text-gray-400 focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 ${
+                      errors.message ? "border-red-600" : ""
                     }`}
                     placeholder="Your message"
                   ></textarea>
@@ -809,10 +804,10 @@ export default function Home() {
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-white text-black hover:bg-gray-200"
+                  className="w-full bg-red-600 text-white hover:bg-red-700 font-bold text-lg py-6 border-2 border-white shadow-lg"
                   disabled={sending}
                 >
-                  {sending ? "Sending..." : "Send Message"}
+                  {sending ? "Sending... 🍁" : "Send Message 🍁"}
                 </Button>
               </form>
             </div>
@@ -821,39 +816,40 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 bg-black py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <footer className="border-t-4 border-red-600 bg-gradient-to-br from-gray-900 via-gray-800 to-red-900 py-12 relative">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-5 left-10 text-6xl text-red-300">🍁</div>
+          <div className="absolute bottom-5 right-10 text-6xl text-red-300">🍁</div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
             <div className="flex items-center gap-2">
-              <Image
-                width={32}
-                height={32}
-                src="/anton.png"
-                alt="Profile picture"
-                className="h-8 w-8 rounded-full object-cover"
-              />
-              <span className="text-lg font-bold">Anton Romeo</span>
+              <div className="relative">
+                <div className="absolute inset-0 rounded-full border-4 border-red-500 animate-pulse"></div>
+                <Image
+                  width={40}
+                  height={40}
+                  src="/anton.jpg"
+                  alt="Profile picture"
+                  className="h-10 w-10 rounded-full object-cover border-2 border-white"
+                />
+              </div>
+              <span className="text-lg font-bold text-white flex items-center gap-2">
+                <span>🍁</span> Anton Romeo <span className="text-red-400">| Canada</span> <span>🇨🇦</span>
+              </span>
             </div>
             <div className="flex gap-6">
-              <Link
-                href="https://github.com/onlinehub88"
-                className="text-zinc-400 transition-colors hover:text-white"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
-              </Link>
+
               <Link
                 href="mailto:antonr24710@gmail.com"
-                className="text-zinc-400 transition-colors hover:text-white"
+                className="text-white transition-all hover:text-red-400 hover:scale-110 p-2 rounded-full border-2 border-red-600 bg-red-600/20 hover:bg-red-600"
               >
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
               </Link>
               <Link
-                href="https://www.linkedin.com/in/anton-romeo/"
-                className="text-zinc-400 transition-colors hover:text-white"
+                href="https://www.linkedin.com/in/anton-romeo-218a4b3a8"
+                className="text-white transition-all hover:text-red-400 hover:scale-110 p-2 rounded-full border-2 border-red-600 bg-red-600/20 hover:bg-red-600"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -861,8 +857,8 @@ export default function Home() {
                 <span className="sr-only">LinkedIn</span>
               </Link>
             </div>
-            <div className="text-sm text-zinc-500">
-              © {new Date().getFullYear()} Anton Romeo. All rights reserved.
+            <div className="text-sm text-red-200 font-medium flex items-center gap-2">
+              🍁 © {new Date().getFullYear()} Anton Romeo. All rights reserved. Made with ❤️ in Canada 🇨🇦
             </div>
           </div>
         </div>
